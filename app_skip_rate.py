@@ -74,7 +74,7 @@ with st.container():
 #loaded_model = pickle.loads(response.content)
 
 def cargar_modelo():
-   with open('https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl', 'rb') as file:
+   with open('https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl') as file:
        model = pickle.load(file)
    return model
 
