@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pickle
 shap.initjs()
 
-url = https://github.com/GPT05/AMII/blob/f6e8e113b0024d62730b1cc74098f98e74f3e038/BD_LANZAMIENTOS_2019_2021.csv
+url = 'https://github.com/GPT05/AMII/blob/f6e8e113b0024d62730b1cc74098f98e74f3e038/BD_LANZAMIENTOS_2019_2021.csv'
 data = pd.read_csv(url)
 
 # Configurar el tema de la página
