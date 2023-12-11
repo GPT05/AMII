@@ -5,6 +5,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import pickle
 import requests
+import os
+
 shap.initjs()
 
 url = 'https://raw.githubusercontent.com/GPT05/AMII/main/BD_LANZAMIENTOS_2019_2021.csv'
@@ -73,12 +75,17 @@ with st.container():
 #response = requests.get(urlm)
 #loaded_model = pickle.loads(response.content)
 
-def cargar_modelo():
-   with open('https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl') as file:
-       model = pickle.load(file)
-   return model
+my_dir = os.path.dirname('https://raw.githubusercontent.com/GPT05/AMII/main/')
+pickle_file_path = os.path.join(my_dir, 'clf_model.pkl')
+with open(pickle_file_path, 'rb') as pickle_file:
+loaded_model = pickle.load(pickle_file)
 
-loaded_model = cargar_modelo()
+#def cargar_modelo():
+   #with open('https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl') as file:
+       #model = pickle.load(file)
+   #return model
+
+#loaded_model = cargar_modelo()
 
 if st.button('Calcular'):
     input_data = pd.DataFrame({'DURACION': [feature1], 'ACOUSTICNESS': [feature2], 'DANCEABILITY': [feature3], 'ENERGY': [feature4], 'LIVENESS': [feature5],'LOUDNESS': [feature6],'SPEECHINESS': [feature7],'TEMPO': [feature8],'VALENCE': [feature9]})
