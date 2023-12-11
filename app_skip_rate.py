@@ -1,4 +1,3 @@
-!pip install ipython
 import streamlit as st
 import lime.lime_tabular
 import shap
