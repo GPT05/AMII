@@ -78,7 +78,7 @@ with st.container():
 my_dir = os.path.dirname('https://raw.githubusercontent.com/GPT05/AMII/main/')
 pickle_file_path = os.path.join(my_dir, 'clf_model.pkl')
 with open(pickle_file_path, 'rb') as pickle_file:
-loaded_model = pickle.load(pickle_file)
+    loaded_model = pickle.load(pickle_file)
 
 #def cargar_modelo():
    #with open('https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl') as file:
