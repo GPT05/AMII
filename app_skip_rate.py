@@ -68,13 +68,16 @@ with st.container():
       feature8 = st.slider('TEMPO (BPM)', min_value=0, max_value=500, value=0)
       feature9 = st.slider('VALENCE', min_value=0.0, max_value=1.0, value=0.0, step = 0.01)
 
+urlm = 'https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl'
+response = requests.get(urlm)
+loaded_model = pickle.loads(response.content)
 
-def cargar_modelo():
-   with open('clf_model.pkl', 'rb') as file:
-       model = pickle.load(file)
-   return model
+#def cargar_modelo():
+   #with open('clf_model.pkl', 'rb') as file:
+       #model = pickle.load(file)
+   #return model
 
-loaded_model = cargar_modelo()
+#loaded_model = cargar_modelo()
 
 if st.button('Calcular'):
     input_data = pd.DataFrame({'DURACION': [feature1], 'ACOUSTICNESS': [feature2], 'DANCEABILITY': [feature3], 'ENERGY': [feature4], 'LIVENESS': [feature5],'LOUDNESS': [feature6],'SPEECHINESS': [feature7],'TEMPO': [feature8],'VALENCE': [feature9]})
