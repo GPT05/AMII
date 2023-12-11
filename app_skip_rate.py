@@ -4,6 +4,7 @@ import shap
 import pandas as pd
 import matplotlib.pyplot as plt
 import pickle
+import requests
 shap.initjs()
 
 url = 'https://raw.githubusercontent.com/GPT05/AMII/main/BD_LANZAMIENTOS_2019_2021.csv'
