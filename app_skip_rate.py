@@ -68,9 +68,9 @@ with st.container():
       feature8 = st.slider('TEMPO (BPM)', min_value=0, max_value=500, value=0)
       feature9 = st.slider('VALENCE', min_value=0.0, max_value=1.0, value=0.0, step = 0.01)
 
-urlm = 'https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl'
-response = requests.get(urlm)
-loaded_model = pickle.loads(response.content)
+url_m = 'https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl'
+response = requests.get(url_m)
+loaded_model = pickle.loads(response)
 
 #def cargar_modelo():
    #with open('clf_model.pkl', 'rb') as file:
