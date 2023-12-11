@@ -5,8 +5,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import pickle
 import requests
-import os
-
 shap.initjs()
 
 url = 'https://raw.githubusercontent.com/GPT05/AMII/main/BD_LANZAMIENTOS_2019_2021.csv'
@@ -71,17 +69,12 @@ with st.container():
       feature8 = st.slider('TEMPO (BPM)', min_value=0, max_value=500, value=0)
       feature9 = st.slider('VALENCE', min_value=0.0, max_value=1.0, value=0.0, step = 0.01)
 
-#urlm = 'https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl'
-#response = requests.get(urlm)
-#loaded_model = pickle.loads(response.content)
-
-my_dir = os.path.dirname('https://raw.githubusercontent.com/GPT05/AMII/main/')
-pickle_file_path = os.path.join(my_dir, 'clf_model.pkl')
-with open(pickle_file_path, 'rb') as pickle_file:
-    loaded_model = pickle.load(pickle_file)
+urlm = 'https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl'
+response = requests.get(urlm)
+loaded_model = pickle.loads(response.content)
 
 #def cargar_modelo():
-   #with open('https://raw.githubusercontent.com/GPT05/AMII/main/clf_model.pkl') as file:
+   #with open('clf_model.pkl','rb') as file:
        #model = pickle.load(file)
    #return model
 
